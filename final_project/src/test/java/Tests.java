@@ -26,13 +26,13 @@ public class Tests {
     public void mainTest() {
         Map<String, Object> data = new HashMap<>();
         data.put("userName", "Nikoloz" +  Math.random()*(100000-10+1)+10);
-        data.put("password", "Asd-12345%6");
+        data.put("password", "Asd-12345%6"); //მონაცემები რომლებიც ტესტებს გადაეცემა
 
-        Assert.assertEquals(UserTestSteps.createUser(data).books.length, 0);
+        Assert.assertEquals(UserTestSteps.createUser(data).books.length, 0); //დაბრუნებული instance-დან წიგნების შემოწმება
 
         TokenOutput response = UserTestSteps.generateToken(data);
-        Assert.assertEquals(response.status, "Success");
-        Assert.assertEquals(response.result, "User authorized successfully.");
+        Assert.assertEquals(response.status, "Success"); //დაბრუნებული instance-დან სტატუსის შემოწმება
+        Assert.assertEquals(response.result, "User authorized successfully."); //დაბრუნებული instance-დან რეზულტატის შემოწმება
         Assert.assertTrue(UserTestSteps.checkAuthorized(data));
 
         open("https://demoqa.com/login");
