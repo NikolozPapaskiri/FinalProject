@@ -14,6 +14,7 @@ import java.util.Map;
 
 public class UserTestSteps {
 
+    //გადაეცემა Map-ი რომელიც შემდგომში გადაიქცევა reqsest body-დ, მეთოდი აბრუნებს response-ის კლასის instance-ს რასაც ტესტ კლასსში ვადარებთ
     public static UserOutput createUser(Map<String, Object> data) {
         RequestSpecification httpRequest = RestAssured.given();
         ResponseBody<Response> response = httpRequest.contentType(ContentType.JSON)
@@ -24,6 +25,7 @@ public class UserTestSteps {
         return response.as(UserOutput.class);
     }
 
+    //გადაეცემა Map-ი რომელიც შემდგომში გადაიქცევა reqsest body-დ, მეთოდი აბრუნებს response-ის კლასის instance-ს რასაც ტესტ კლასსში ვადარებთ
     public static TokenOutput generateToken(Map<String, Object> data) {
         RequestSpecification httpRequest = RestAssured.given();
         ResponseBody<Response> response = httpRequest.contentType(ContentType.JSON)
@@ -34,6 +36,7 @@ public class UserTestSteps {
         return response.as(TokenOutput.class);
     }
 
+    //გადაეცემა Map-ი რომელიც შემდგომში გადაიქცევა reqsest body-დ, მეთოდი აბრუნებს boolean-ის კლასის instance-ს რასაც ტესტ კლასსში ვადარებთ
     public static boolean checkAuthorized(Map<String, Object> data) {
         RequestSpecification httpRequest = RestAssured.given();
 
